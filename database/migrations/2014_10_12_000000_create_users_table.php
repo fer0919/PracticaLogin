@@ -22,6 +22,8 @@ return new class extends Migration
             $table->unsignedBigInteger('role_id');
             $table->foreign('role_id')->references('id')->on('roles');
             $table->string('verification_code')->nullable();
+            $table->string('phone_number');
+            $table->boolean('two_factor_authenticated')->default(false);
         });
     }
 
